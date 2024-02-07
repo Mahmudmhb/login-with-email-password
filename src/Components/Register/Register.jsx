@@ -71,7 +71,7 @@ const Register = () => {
             </label>
           </div>
           <button className="btn btn-success w-full" type="submit">
-            Login
+            Register Now
           </button>
         </form>
         <div>{success && <h1> you are succesfuly login done</h1>}</div>
