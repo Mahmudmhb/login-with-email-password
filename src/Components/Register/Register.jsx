@@ -5,7 +5,7 @@ import { IoIosEyeOff, IoMdEye } from "react-icons/io";
 
 const Register = () => {
   const [success, setSuccess] = useState(null);
-  const [loginError, SetLoginError] = useState(null);
+  const [loginError, setLoginError] = useState(null);
   const [showIcon, setShowIcon] = useState(false);
   const handleFromOnSubmit = (e) => {
     e.preventDefault();
@@ -13,14 +13,14 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const Accept = e.target.terms.checked;
-    SetLoginError("");
+    setLoginError("");
     setSuccess("");
     // console.log(email, password);
     if (password.length < 6) {
-      SetLoginError("must need 6 cherecter please provite minimum 6  or long");
+      setLoginError("must need 6 cherecter please provite minimum 6  or long");
       return;
     } else if (!Accept) {
-      SetLoginError("please Accept our tems and condition");
+      setLoginError("please Accept our tems and condition");
       return;
     }
     const auth = getAuth(app);
@@ -30,7 +30,7 @@ const Register = () => {
         setSuccess(user);
       })
       .catch((error) => {
-        SetLoginError(error.message);
+        setLoginError(error.message);
 
         // console.log(error.message);
       });
